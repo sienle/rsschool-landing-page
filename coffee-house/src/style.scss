@@ -24,7 +24,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  //outline: 1px solid red;
+  outline: 1px solid red;
 }
 
 html {
@@ -71,6 +71,10 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+section {
+  margin-bottom: 100px;
 }
 
 .container {
@@ -131,6 +135,10 @@ li {
 
 .heading--inverse {
   color: var(--color-text-inverse);
+}
+
+.text-center {
+  text-align: center;
 }
 
 .caption {
@@ -241,4 +249,21 @@ li {
   height: 64px;
   border-radius: 100px;
   background-color: var(--color-bg-page);
+}
+
+#favorite-coffee {
+  height: 799px;
+}
+
+#about {
+  height: 1325px;
+}
+
+#mobile-app {
+  height: 630px;
+}
+
+.footer__container {
+  height: 450px;
+  margin-bottom: 40px;
 }
