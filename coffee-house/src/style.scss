@@ -1,5 +1,26 @@
 @use 'modern-normalize';
 
+:root {
+  --color-text-primary: #403F3D;
+  --color-text-inverse: #E1D4C9;
+  --color-text-accent: #B0907A;
+  --color-bg-page: #E1D4C9;
+  --color-bg-container: #665F55;
+  --color-bg-overlay: #403F3Dcc;
+  --color-border-primary: #C1B6AD;
+  --color-border-inverse: #665F55;
+}
+
+[data-theme='dark'] {
+  --color-text-primary: #E1D4C9;
+  --color-bg-page: #292826;
+  --color-bg-container: #403F3D;
+  --color-bg-overlay: #292826;
+  --color-border-primary: #665F55;
+  --color-border-inverse: #C1B6AD;
+}
+
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -11,6 +32,9 @@ html {
 body {
   min-height: 100vh;
   min-height: 100dvh;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 img,
@@ -27,4 +51,23 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 40px;
+
+  @media (max-width: 380px) {
+    padding-inline: 16px;
+  }
+}
+
+.header {
+  padding-top: 20px;
+}
+
+.header__container {
+  display: flex;
+  height: 60px;
 }
