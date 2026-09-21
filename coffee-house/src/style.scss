@@ -24,7 +24,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px solid red;
+  //outline: 1px solid red;
 }
 
 html {
@@ -264,6 +264,55 @@ section {
 }
 
 .footer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
   height: 450px;
   margin-bottom: 40px;
+  background-color: var(--color-bg-container);
+  border-radius: 40px;
+}
+
+.left-footer {
+  display: flex;
+  flex-direction: column;
+  width: 530px;
+  height: 250px;
+  gap: 24px;
+}
+
+.right-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 530px;
+  height: 186px;
+  color: var(--color-text-inverse);
+}
+
+.social {
+  width: 204px;
+  height: 60px;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  color: var(--color-border-primary);
+}
+
+.contact-info {
+  width: 195px;
+  height: 116px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-info__item {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
