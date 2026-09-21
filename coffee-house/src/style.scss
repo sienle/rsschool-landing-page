@@ -1,27 +1,28 @@
-@use 'modern-normalize';
+@use "modern-normalize";
 
 :root {
-  --color-text-primary: #403F3D;
-  --color-text-inverse: #E1D4C9;
-  --color-text-accent: #B0907A;
-  --color-bg-page: #E1D4C9;
-  --color-bg-container: #665F55;
-  --color-bg-overlay: #403F3Dcc;
-  --color-border-primary: #C1B6AD;
-  --color-border-inverse: #665F55;
+  --color-text-primary: #403f3d;
+  --color-text-inverse: #e1d4c9;
+  --color-text-accent: #b0907a;
+  --color-bg-page: #e1d4c9;
+  --color-bg-container: #665f55;
+  --color-bg-overlay: #403f3dcc;
+  --color-border-primary: #c1b6ad;
+  --color-border-inverse: #665f55;
 }
 
-[data-theme='dark'] {
-  --color-text-primary: #E1D4C9;
+[data-theme="dark"] {
+  --color-text-primary: #e1d4c9;
   --color-bg-page: #292826;
-  --color-bg-container: #403F3D;
+  --color-bg-container: #403f3d;
   --color-bg-overlay: #292826;
-  --color-border-primary: #665F55;
-  --color-border-inverse: #C1B6AD;
+  --color-border-primary: #665f55;
+  --color-border-inverse: #c1b6ad;
 }
 
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   //outline: 1px solid red;
 }
@@ -33,7 +34,7 @@ html {
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -60,6 +61,8 @@ select {
 
 a {
   text-decoration: none;
+  user-select: none;
+  color: inherit;
 }
 
 ul {
@@ -81,7 +84,7 @@ li {
 }
 
 .header {
-  padding-top: 20px;
+  padding-block: 20px;
 }
 
 .header__container {
@@ -96,6 +99,7 @@ li {
   font-size: 72px;
   font-weight: 600;
   line-height: 105%;
+  margin: 0;
 
   @media (max-width: 380px) {
     font-size: 42px;
@@ -120,8 +124,13 @@ li {
   line-height: 125%;
 }
 
-.heading--accent{
+.heading--accent {
   font-style: italic;
+  color: var(--color-text-accent);
+}
+
+.heading--inverse {
+  color: var(--color-text-inverse);
 }
 
 .caption {
@@ -205,4 +214,31 @@ li {
 .menu-img {
   width: 20px;
   height: 20px;
+}
+
+#hero {
+  height: 644px;
+  background-image: url(./assets/img-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 40px;
+  padding: 100px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 530px;
+  height: 444px;
+}
+
+.hero-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 64px;
+  border-radius: 100px;
+  background-color: var(--color-bg-page);
 }
