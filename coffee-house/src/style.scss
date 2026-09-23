@@ -24,7 +24,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  //outline: 1px solid red;
+  outline: 1px solid red;
 }
 
 html {
@@ -95,6 +95,14 @@ section {
   margin-inline: auto;
   padding-inline: 40px;
 
+  @media (max-width: 600px) {
+    padding-inline: 26px;
+  }
+
+  @media (max-width: 600px) {
+    padding-inline: 18px;
+  }
+
   @media (max-width: 380px) {
     padding-inline: 16px;
   }
@@ -119,7 +127,12 @@ section {
   line-height: 105%;
   margin: 0;
 
-  @media (max-width: 380px) {
+  @media (max-width: 720px) {
+    font-size: 58px;
+    line-height: 115%;
+  }
+
+  @media (max-width: 600px) {
     font-size: 42px;
     line-height: 115%;
   }
@@ -436,6 +449,24 @@ section {
   background-position: center;
   border-radius: 40px;
   padding: 100px;
+
+  @media (max-width: 920px) {
+    padding: 100px 60px;
+  }
+  @media (max-width: 768px) {
+    padding: 80px 40px;
+    height: 644px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 60px 16px;
+    height: 552px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 40px 16px;
+    height: auto;
+  }
 }
 
 .hero-text {
@@ -444,12 +475,18 @@ section {
   gap: 40px;
   width: 530px;
   height: 444px;
+
+  @media (max-width: 740px) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .hero-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 200px;
   height: 64px;
   border-radius: 100px;
