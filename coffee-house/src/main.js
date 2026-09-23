@@ -15,3 +15,18 @@ themeSwitch.addEventListener("change", () => {
   document.documentElement.dataset.theme = theme;
   localStorage.setItem("theme", theme);
 });
+
+const scrollUp = document.querySelector(".scroll-up");
+
+if (scrollUp) {
+  window.addEventListener("scroll", () => {
+    scrollUp.classList.toggle("visible", window.scrollY > 500);
+  });
+
+  scrollUp.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}

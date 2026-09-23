@@ -569,3 +569,41 @@ section {
 .menu-section {
   height: 1328px;
 }
+
+.scroll-up {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-text-accent);
+  border-radius: 50%;
+  background-color: var(--color-text-accent);
+  color: var(--color-bg-page);
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 380px) {
+    right: 16px;
+    bottom: 16px;
+  }
+}
