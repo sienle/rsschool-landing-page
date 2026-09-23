@@ -225,10 +225,20 @@ section {
 }
 
 .menu-link {
+  user-select: none;
   display: flex;
   width: 72px;
   height: 28px;
   gap: 8px;
+
+  &--clicked {
+    cursor: default;
+    border-bottom: 3px solid var(--color-text-primary);
+
+    .action {
+      cursor: default;
+    }
+  }
 }
 
 .menu-img {
@@ -499,4 +509,8 @@ section {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.menu-section {
+  height: 1328px;
 }
