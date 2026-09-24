@@ -443,6 +443,20 @@ section {
       cursor: default;
     }
   }
+
+  &:hover,
+  &:active {
+    border-bottom: 3px solid var(--color-text-primary);
+  }
+}
+
+.header__nav-item {
+  border-bottom: 3px solid transparent;
+
+  &:hover,
+  &:active {
+    border-bottom-color: var(--color-text-primary);
+  }
 }
 
 .menu-img {
@@ -488,7 +502,14 @@ section {
   }
 }
 
+.hero-button-icon-hover {
+  display: none;
+  position: absolute;
+  right: 52px;
+}
+
 .hero-button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -497,6 +518,13 @@ section {
   height: 64px;
   border-radius: 100px;
   background-color: var(--color-bg-page);
+
+  &:hover,
+  &:active {
+    .hero-button-icon-hover {
+      display: inline;
+    }
+  }
 }
 
 #favorite-coffee {
@@ -529,9 +557,17 @@ section {
   width: 61px;
   height: 61px;
   flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 100px;
 
   @media (max-width: 540px) {
     display: none;
+  }
+
+  &:hover,
+  &active {
+    background-color: var(--color-border-inverse);
+    color: var(--color-bg-page);
   }
 }
 
@@ -577,6 +613,12 @@ section {
   height: 4px;
   border-radius: 100px;
   background-color: var(--color-border-primary);
+}
+
+.slider-controls__item:not(.slider-controls__active):hover,
+.slider-controls__item:not(.slider-controls__active):active {
+  cursor: pointer;
+  background-color: var(--color-border-inverse);
 }
 
 .slider-controls__active {
@@ -689,6 +731,12 @@ section {
   height: 64px;
   border-radius: 100px;
   border: 1px solid var(--color-border-inverse);
+
+  &:hover,
+  &:active {
+    background-color: var(--color-border-inverse);
+    color: var(--color-bg-page);
+  }
 }
 
 .app-link-icon {
@@ -760,9 +808,10 @@ section {
   height: 60px;
   display: flex;
   gap: 12px;
+  color: var(--color-text-inverse);
 }
 
-.social-icon {
+.social__link {
   color: var(--color-border-primary);
 }
 
@@ -790,10 +839,10 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-text-accent);
+  border: 1px solid var(--color-text-primary);
   border-radius: 50%;
-  background-color: var(--color-text-accent);
-  color: var(--color-bg-page);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
   font-size: 24px;
   cursor: pointer;
   opacity: 0;
@@ -816,6 +865,12 @@ section {
   @media (max-width: 380px) {
     right: 16px;
     bottom: 16px;
+  }
+
+  &:hover,
+  &:active {
+    background-color: var(--color-border-inverse);
+    color: var(--color-bg-page);
   }
 }
 
@@ -861,6 +916,7 @@ section {
     &--active {
       border: 1px solid var(--color-bg-container);
       background-color: var(--color-bg-container);
+      color: var(--color-text-inverse);
       cursor: default;
     }
   }
@@ -874,6 +930,14 @@ section {
     border-radius: 100px;
     background-color: var(--color-border-primary);
   }
+}
+
+.menu-toggler__item:not(.menu-toggler__item--active):hover,
+.menu-toggler__item:not(.menu-toggler__item--active):active {
+  border: 1px solid var(--color-bg-container);
+  background-color: var(--color-bg-container);
+  color: var(--color-text-inverse);
+  cursor: pointer;
 }
 
 .menu-toggler__item--active .menu-toggler__icon {
