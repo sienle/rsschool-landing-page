@@ -195,7 +195,9 @@ section {
 }
 
 .contact-info__item.pointable {
-  &:hover, & active {
+  transition: all 0.5s ease;
+  &:hover,
+  & active {
     border-bottom: 3px solid var(--color-text-inverse);
   }
 }
@@ -260,7 +262,7 @@ section {
   padding: 0px;
   gap: 8px;
   cursor: pointer;
-  transition: all 1 ease;
+  transition: all 1s ease;
 }
 @media (max-width: 920px) {
   .burger {
@@ -334,20 +336,23 @@ section {
   margin-top: 50px;
 }
 
+.burger__nav-item a:not(.active__nav) {
+  transition:
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
 @media (pointer: fine) {
   .burger__nav-item a:not(.active__nav):hover {
-    transition: all 0.5s ease;
     color: var(--color-text-accent);
-    border: 1px solid var(--color-border-primary);
-    border-radius: 100px;
+    border-color: var(--color-border-primary);
     box-shadow: 0px 4px 4px var(--color-text-accent);
   }
 }
 .burger__nav-item a:not(.active__nav):active {
-  transition: all 0.5s ease;
   color: var(--color-text-accent);
-  border: 1px solid var(--color-border-primary);
-  border-radius: 100px;
+  border-color: var(--color-border-primary);
   box-shadow: 0px 4px 4px var(--color-text-accent);
 }
 
@@ -436,6 +441,8 @@ section {
   width: 72px;
   height: 28px;
   gap: 8px;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom-color 0.3s ease;
 
   @media (max-width: 920px) {
     display: none;
@@ -457,6 +464,7 @@ section {
 }
 
 .header__nav-item {
+  transition: border-bottom-color 0.3s ease;
   border-bottom: 3px solid transparent;
 
   &:hover,
@@ -509,9 +517,10 @@ section {
 }
 
 .hero-button-icon-hover {
-  display: none;
   position: absolute;
   right: 52px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .hero-button {
@@ -528,7 +537,7 @@ section {
   &:hover,
   &:active {
     .hero-button-icon-hover {
-      display: inline;
+      opacity: 1;
     }
   }
 }
@@ -565,13 +574,14 @@ section {
   flex-shrink: 0;
   cursor: pointer;
   border-radius: 100px;
+  transition: all 0.5s ease;
 
   @media (max-width: 540px) {
     display: none;
   }
 
   &:hover,
-  &active {
+  &:active {
     background-color: var(--color-border-inverse);
     color: var(--color-bg-page);
   }
@@ -619,6 +629,7 @@ section {
   height: 4px;
   border-radius: 100px;
   background-color: var(--color-border-primary);
+  transition: background-color 0.5s ease;
 }
 
 .slider-controls__item:not(.slider-controls__active):hover,
@@ -737,6 +748,9 @@ section {
   height: 64px;
   border-radius: 100px;
   border: 1px solid var(--color-border-inverse);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   &:hover,
   &:active {
@@ -952,12 +966,25 @@ section {
   }
 }
 
+.menu-toggler__item {
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
 .menu-toggler__item:not(.menu-toggler__item--active):hover,
 .menu-toggler__item:not(.menu-toggler__item--active):active {
   border: 1px solid var(--color-bg-container);
   background-color: var(--color-bg-container);
   color: var(--color-text-inverse);
   cursor: pointer;
+}
+
+.menu-toggler__icon {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .menu-toggler__item--active .menu-toggler__icon {
