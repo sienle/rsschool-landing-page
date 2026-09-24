@@ -194,6 +194,12 @@ section {
   cursor: pointer;
 }
 
+.contact-info__item.pointable {
+  &:hover, & active {
+    border-bottom: 3px solid var(--color-text-inverse);
+  }
+}
+
 .burger-link {
   font-size: 32px;
   font-weight: 600;
@@ -808,11 +814,24 @@ section {
   height: 60px;
   display: flex;
   gap: 12px;
-  color: var(--color-text-inverse);
 }
 
 .social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-border-primary);
+  border-radius: 100px;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+
+  &:hover,
+  &:active {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-page);
+  }
 }
 
 .contact-info {
@@ -828,6 +847,7 @@ section {
   display: flex;
   align-items: center;
   gap: 8px;
+  border-bottom: 3px solid transparent;
 }
 
 .scroll-up {
