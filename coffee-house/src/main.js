@@ -43,29 +43,29 @@ burgerButton.addEventListener('click', ()=> {
   burgerMenu.classList.toggle('burger__nav_active');
   overflowWrapper.classList.toggle('overflow__wraper_active');
   if (burgerButton.classList.contains('burger__active')) {
-    document.querySelector('body').style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
   } else {
-    document.querySelector('body').style.overflow = null;
+    document.body.style.overflow = null;
   }
 });
 
 menuLinks.forEach(item => {
   item.addEventListener('click', ()=> {
-    if (document.querySelector('body').style.overflow == 'hidden') {
+    if (document.body.style.overflow == 'hidden') {
       burgerButton.classList.toggle('burger__active');
       burgerMenu.classList.toggle('burger__nav_active');
       overflowWrapper.classList.toggle('overflow__wraper_active');
-      document.querySelector('body').style.overflow = null;
+      document.body.style.overflow = null;
     }
   });
 });
 
 window.addEventListener('resize', () => {
-  screenWid = window.innerWidth;
-  if (screenWid > 768 && burgerButton.classList.contains('burger__active')) {
-    burgerButton.classList.toggle('burger__active');
-    burgerMenu.classList.toggle('burger__nav_active');
-    overflowWrapper.classList.toggle('overflow__wraper_active');
-    document.querySelector('body').style.overflow = null;
+  let screenWid = window.innerWidth;
+  if (screenWid > 920) {
+    burgerButton.classList.remove('burger__active');
+    burgerMenu.classList.remove('burger__nav_active');
+    overflowWrapper.classList.remove('overflow__wraper_active');
+    document.body.style.overflow = null;
   }
 })
