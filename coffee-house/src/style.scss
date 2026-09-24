@@ -435,6 +435,16 @@ section {
   color: var(--color-text-inverse);
 }
 
+#theme-switch:not(:checked) + .theme-switch:hover .moon {
+  color: var(--color-text-inverse);
+  background-color: var(--color-bg-overlay);
+}
+
+#theme-switch:checked + .theme-switch:hover .sun {
+  color: var(--color-border-primary);
+  background-color: var(--color-text-inverse);
+}
+
 .menu-link {
   user-select: none;
   display: flex;
