@@ -645,6 +645,11 @@ section {
   gap: 40px;
   flex: 0 0 630px;
   height: 342px;
+
+  @media (max-width: 760px) {
+    flex-basis: 100%;
+    height: auto;
+  }
 }
 
 .app-img {
@@ -652,11 +657,19 @@ section {
   min-width: 400px;
   max-width: 630px;
   height: auto;
+
+  @media (max-width: 480px) {
+    min-width: 250px;
+  }
 }
 
 .app-links {
   display: flex;
   gap: 20px;
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+  }
 }
 
 .app-link {
