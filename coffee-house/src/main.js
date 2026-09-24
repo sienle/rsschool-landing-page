@@ -28,6 +28,8 @@ if (scrollUp) {
       top: 0,
       behavior: "smooth",
     });
+
+    history.replaceState(null, "", window.location.pathname);
   });
 }
 
