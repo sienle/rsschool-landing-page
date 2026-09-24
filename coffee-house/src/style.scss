@@ -24,7 +24,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: 1px solid red;
+  //outline: 1px solid red;
 }
 
 html {
@@ -781,10 +781,6 @@ section {
   gap: 8px;
 }
 
-.menu-section {
-  height: 1328px;
-}
-
 .scroll-up {
   position: fixed;
   right: 40px;
@@ -828,6 +824,7 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  height: auto;
 }
 
 .menu-section-heading {
@@ -842,6 +839,11 @@ section {
   width: 361px;
   height: 46px;
 
+  @media (max-width: 440px) {
+    width: auto;
+    gap: 8px;
+  }
+
   &__item {
     display: flex;
     gap: 8px;
@@ -851,6 +853,10 @@ section {
     height: 46px;
     padding: 7px 16px 7px 7px;
     cursor: pointer;
+
+    @media (max-width: 440px) {
+      padding-inline: 6px;
+    }
 
     &--active {
       border: 1px solid var(--color-bg-container);
@@ -881,9 +887,11 @@ section {
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .card {
+  flex: 0 0 310px;
   width: 310px;
   height: 506px;
   border-radius: 40px;
@@ -894,6 +902,7 @@ section {
   border-radius: 40px;
   width: 310px;
   height: 310px;
+  object-fit: cover;
 }
 
 .card-text-container {
@@ -908,4 +917,34 @@ section {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.menu-load-more {
+  display: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 1200px) {
+  .card:nth-child(n + 7) {
+    display: none;
+  }
+
+  .menu-load-more {
+    display: block;
+  }
+}
+
+@media (max-width: 1106px) {
+  .card:nth-child(n + 5) {
+    display: none;
+  }
+
+  .menu-load-more {
+    display: block;
+  }
 }
