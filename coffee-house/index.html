@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <title>Coffee House</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <a href="#" class="header__logo">
+          <img src="./src/assets/logo.png" alt="logo">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#favorite-coffee" class="header__nav-link action"
+                >Favorite coffee</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a href="#about" class="header__nav-link action">About</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#mobile-app" class="header__nav-link action"
+                >Mobile app</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a href="#footer" class="header__nav-link action">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <div class="theme-toggler">
+            <input type="checkbox" id="theme-switch">
+            <label class="theme-switch" for="theme-switch">
+              <span class="theme-item sun">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 3V1C10 0.45 10.45 0 11 0C11.55 0 12 0.45 12 1V3C12 3.55 11.55 4 11 4C10.45 4 10 3.55 10 3ZM17.36 6.05L18.77 4.63C19.16 4.24 19.16 3.61 18.77 3.22C18.38 2.83 17.75 2.83 17.36 3.22L15.95 4.64C15.56 5.03 15.56 5.66 15.95 6.05C16.34 6.44 16.97 6.44 17.36 6.05ZM21 10H19C18.45 10 18 10.45 18 11C18 11.55 18.45 12 19 12H21C21.55 12 22 11.55 22 11C22 10.45 21.55 10 21 10ZM11 18C10.45 18 10 18.45 10 19V21C10 21.55 10.45 22 11 22C11.55 22 12 21.55 12 21V19C12 18.45 11.55 18 11 18ZM4.64 6.05L3.22 4.64C2.83 4.25 2.83 3.61 3.22 3.23C3.61 2.85 4.25 2.84 4.63 3.23L6.04 4.64C6.43 5.03 6.43 5.67 6.04 6.05C5.65 6.43 5.02 6.44 4.64 6.05ZM15.95 15.95C15.56 16.34 15.56 16.98 15.95 17.36L17.36 18.77C17.75 19.16 18.39 19.16 18.77 18.77C19.16 18.38 19.16 17.74 18.77 17.36L17.36 15.95C16.98 15.56 16.34 15.56 15.95 15.95ZM1 12H3C3.55 12 4 11.55 4 11C4 10.45 3.55 10 3 10H1C0.45 10 0 10.45 0 11C0 11.55 0.45 12 1 12ZM4.64 18.78L6.05 17.37C6.44 16.98 6.44 16.34 6.05 15.96C5.66 15.58 5.02 15.57 4.64 15.96L3.23 17.37C2.84 17.76 2.84 18.4 3.23 18.78C3.61 19.17 4.25 19.17 4.64 18.78ZM11 5C7.69 5 5 7.69 5 11C5 14.31 7.69 17 11 17C14.31 17 17 14.31 17 11C17 7.69 14.31 5 11 5Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span class="theme-item moon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 0C4.03 0 0 4.03 0 9C0 13.97 4.03 18 9 18C13.97 18 18 13.97 18 9C18 8.54 17.96 8.08 17.9 7.64C16.92 9.01 15.32 9.9 13.5 9.9C10.52 9.9 8.1 7.48 8.1 4.5C8.1 2.69 8.99 1.08 10.36 0.0999999C9.92 0.0399999 9.46 0 9 0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </label>
+          </div>
+          <a class="menu-link" href="./menu/">
+            <span class="action">Menu</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <button class="burger">
+            <span class="burger__line burger__line_1"></span
+            ><span class="burger__line burger__line_2"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="overflow__wraper">
+      <nav class="burger__nav">
+        <ul>
+          <li class="burger__nav-item">
+            <a href="#favorite-coffee" class="burger__item burger-link"
+              >Favorite coffee</a
+            >
+          </li>
+          <li class="burger__nav-item">
+            <a href="#about" class="burger__item burger-link">About</a>
+          </li>
+          <li class="burger__nav-item">
+            <a href="#mobile-app" class="burger__item burger-link"
+              >Mobile App</a
+            >
+          </li>
+          <li class="burger__nav-item">
+            <a href="#footer" class="burger__item burger-link">Contact us</a>
+          </li>
+          <li class="burger__nav-item">
+            <a href="./menu/" class="burger__item burger-link"
+              >Menu
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="container">
+      <section id="hero">
+        <div class="hero-text">
+          <h1 class="heading-1 heading--inverse">
+            <span class="heading--accent">Enjoy</span> premium coffee at our
+            charming cafe
+          </h1>
+          <span class="heading--inverse">
+            With its inviting atmosphere and delicious coffee options, the
+            Coffee House Resource is a popular destination for coffee lovers and
+            those seeking a warm and inviting space to enjoy their favorite
+            beverage.
+          </span>
+          <a class="hero-button action" href="./menu/"
+            >Menu<span class="hero-button-icon-hover"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg></span
+          ></a>
+        </div>
+      </section>
+      <section id="favorite-coffee">
+        <h2 class="heading-2 text-center">
+          Choose your <span class="heading--accent">favorite</span> coffee
+        </h2>
+        <div class="slider">
+          <div class="left-arrow">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0.5"
+                y="0.5"
+                width="59"
+                height="59"
+                rx="29.5"
+                stroke="currentColor"
+              />
+              <path
+                d="M36.5 30H24M30 36L24 30L30 24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="main-slider">
+            <div class="slider-image">
+              <img
+                src="./src/assets/coffee-slider-1.png"
+                alt="S’mores Frappuccino"
+              >
+            </div>
+            <div class="slider-image-description">
+              <span class="coffee-name heading-3">S’mores Frappuccino</span>
+              <span class="coffee-description"
+                >This new drink takes an espresso and mixes it with brown sugar
+                and cinnamon before being topped with oat milk.</span
+              >
+              <span class="coffee-price heading-3">$5.50</span>
+            </div>
+            <div class="slider-controls">
+              <div class="slider-controls__item slider-controls__active"></div>
+              <div class="slider-controls__item"></div>
+              <div class="slider-controls__item"></div>
+            </div>
+          </div>
+          <div class="right-arrow">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0.5"
+                y="0.5"
+                width="59"
+                height="59"
+                rx="29.5"
+                stroke="currentColor"
+              />
+              <path
+                d="M24 30H36.5M30.5 36L36.5 30L30.5 24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <h2 class="about-heading heading-2">
+          Resource is
+          <span class="heading--accent">the perfect and cozy place</span> where
+          you can enjoy a variety of hot beverages, relax, catch up with
+          friends, or get some work done.
+        </h2>
+        <div class="gallery">
+          <div class="gallery__column">
+            <div class="gallery__image-wrapper gallery__image-wrapper--large">
+              <img
+                class="gallery__image"
+                src="./src/assets/about/about-1.jpg"
+                alt="Woman drinking coffee"
+              >
+            </div>
+            <div class="gallery__image-wrapper gallery__image-wrapper--small">
+              <img
+                class="gallery__image"
+                src="./src/assets/about/about-2.jpg"
+                alt="Cup of coffee"
+              >
+            </div>
+          </div>
+          <div class="gallery__column">
+            <div class="gallery__image-wrapper gallery__image-wrapper--small">
+              <img
+                class="gallery__image"
+                src="./src/assets/about/about-3.jpg"
+                alt="Man drinking coffee"
+              >
+            </div>
+            <div class="gallery__image-wrapper gallery__image-wrapper--large">
+              <img
+                class="gallery__image"
+                src="./src/assets/about/about-4.jpg"
+                alt="Couple drinking coffee"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="mobile-app">
+        <div class="app-info">
+          <h2 class="heading-2 app-heading">
+            <span class="heading--accent">Download</span> our app to start
+            ordering
+          </h2>
+          <span
+            >Download the Resource app today and experience the comfort of
+            ordering your favorite coffee from wherever you are</span
+          >
+          <div class="app-links">
+            <a href="https://www.apple.com/app-store/" target="_blank" class="app-link">
+              <div class="app-link-icon">
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M26.7073 18.6307C26.6704 14.6324 30.065 12.6872 30.2203 12.5966C28.2977 9.86366 25.3178 9.49026 24.2707 9.46048C21.7679 9.20369 19.3403 10.9206 18.0654 10.9206C16.765 10.9206 14.8017 9.48529 12.6858 9.52747C9.96293 9.56841 7.41566 11.1055 6.0186 13.4923C3.13542 18.359 5.28572 25.5108 8.04802 29.4446C9.42981 31.3712 11.0444 33.5223 13.1578 33.4466C15.2254 33.3635 15.9978 32.1614 18.4929 32.1614C20.9651 32.1614 21.6903 33.4466 23.8457 33.3983C26.0647 33.3635 27.4618 31.463 28.7952 29.519C30.392 27.3108 31.0333 25.1362 31.0588 25.0245C31.0066 25.0071 26.7493 23.4229 26.7073 18.6307Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M22.6357 6.87268C23.7477 5.51675 24.5086 3.67205 24.2974 1.80005C22.6879 1.86952 20.675 2.88554 19.5159 4.21169C18.4903 5.38029 17.5742 7.29571 17.8109 9.097C19.6189 9.2285 21.4753 8.20752 22.6357 6.87268Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="app-link-text">
+                <span class="available-on caption">Available on the</span>
+                <span class="store-name action">App Store</span>
+              </div>
+            </a>
+            <a href="https://play.google.com/store" target="_blank" class="app-link">
+              <div class="app-link-icon">
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.7558 3.20297C3.39335 3.57289 3.18359 4.14884 3.18359 4.89471V31.4994C3.18359 32.2453 3.39335 32.8212 3.7558 33.1911L3.84525 33.2723L19.1359 18.37V18.0181L3.84525 3.11575L3.7558 3.20297Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M26.0776 23.34L20.9863 18.37V18.0181L26.0837 13.0482L26.1979 13.1128L32.2345 16.4617C33.9573 17.4121 33.9573 18.976 32.2345 19.9324L26.1979 23.2753L26.0776 23.34V23.34Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M25.2733 24.2007L20.0617 19.1195L4.68164 34.1166C5.25384 34.7031 6.18695 34.7737 7.24807 34.1873L25.2733 24.2007"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M25.2733 12.1876L7.24807 2.20103C6.18695 1.62058 5.25384 1.69125 4.68164 2.27772L20.0617 17.2688L25.2733 12.1876Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="app-link-text">
+                <span class="available-on caption">Available on</span>
+                <span class="store-name action">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <img
+          src="./src/assets/mobile-screens.png"
+          alt="mobile app screens"
+          class="app-img"
+        >
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="container">
+        <div class="footer__container">
+          <div class="left-footer">
+            <span class="heading-2 heading--inverse"
+              >Sip, Savor, Smile.
+              <span class="heading--accent">It’s coffee time!</span></span
+            >
+            <ul class="social">
+              <li>
+                <a href="https://x.com/" class="social__link" target="_blank"
+                  ><svg
+                    class="social-icon"
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width="59"
+                      height="59"
+                      rx="29.5"
+                      stroke="currentColor"
+                    />
+                    <path
+                      d="M41 21.0101C41 21.0101 38.9821 22.2022 37.86 22.5401C37.2577 21.8476 36.4573 21.3567 35.567 21.134C34.6767 20.9112 33.7395 20.9673 32.8821 21.2945C32.0247 21.6218 31.2884 22.2045 30.773 22.9638C30.2575 23.7231 29.9877 24.6224 30 25.5401V26.5401C28.2426 26.5856 26.5013 26.1959 24.931 25.4055C23.3607 24.6151 22.0103 23.4487 21 22.0101C21 22.0101 17 31.0101 26 35.0101C23.9405 36.408 21.4872 37.109 19 37.0101C28 42.0101 39 37.0101 39 25.5101C38.9991 25.2315 38.9723 24.9537 38.92 24.6801C39.9406 23.6735 41 21.0101 41 21.0101Z"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://instagram.com/"
+                  class="social__link"
+                  target="_blank"
+                  ><svg
+                    class="social-icon"
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width="59"
+                      height="59"
+                      rx="29.5"
+                      stroke="currentColor"
+                    />
+                    <path
+                      d="M30 34C32.2091 34 34 32.2091 34 30C34 27.7909 32.2091 26 30 26C27.7909 26 26 27.7909 26 30C26 32.2091 27.7909 34 30 34Z"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21 34V26C21 23.2386 23.2386 21 26 21H34C36.7614 21 39 23.2386 39 26V34C39 36.7614 36.7614 39 34 39H26C23.2386 39 21 36.7614 21 34Z"
+                      stroke="currentColor"
+                    />
+                    <path
+                      d="M35.5 24.51L35.51 24.4989"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/"
+                  class="social__link"
+                  target="_blank"
+                  ><svg
+                    class="social-icon"
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width="59"
+                      height="59"
+                      rx="29.5"
+                      stroke="currentColor"
+                    />
+                    <path
+                      d="M35 20H32C30.6739 20 29.4021 20.5268 28.4645 21.4645C27.5268 22.4021 27 23.6739 27 25V28H24V32H27V40H31V32H34L35 28H31V25C31 24.7348 31.1054 24.4804 31.2929 24.2929C31.4804 24.1054 31.7348 24 32 24H35V20Z"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="right-footer">
+            <span class="contact-us heading-3">Contact us</span>
+            <div class="contact-info">
+              <div class="contact-info__item pointable">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.6663 8.33329C16.6663 12.0152 9.99967 18.3333 9.99967 18.3333C9.99967 18.3333 3.33301 12.0152 3.33301 8.33329C3.33301 4.65139 6.31778 1.66663 9.99967 1.66663C13.6816 1.66663 16.6663 4.65139 16.6663 8.33329Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M10.0003 9.16667C10.4606 9.16667 10.8337 8.79357 10.8337 8.33333C10.8337 7.8731 10.4606 7.5 10.0003 7.5C9.54009 7.5 9.16699 7.8731 9.16699 8.33333C9.16699 8.79357 9.54009 9.16667 10.0003 9.16667Z"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <a
+                  href="https://maps.app.goo.gl/ZkmGuPUBHTDWE37d9"
+                  class="action"
+                  target="_blank"
+                  >8558 Green Rd., LA</a
+                >
+              </div>
+              <div class="contact-info__item pointable">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.9734 11.335L10.5415 12C8.22345 10.8365 6.79154 9.5 5.95821 7.41667L6.59983 3.97491L5.38697 0.75L2.60446 0.75C1.47691 0.75 0.589659 1.68295 0.776079 2.79498C1.17388 5.16791 2.24731 9.12244 5.12487 12C8.14838 15.0235 12.4411 16.4151 15.0128 17.0121C16.174 17.2817 17.2082 16.3742 17.2082 15.1821L17.2082 12.5677L13.9734 11.335Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <a href="tel:+16035550123" class="action">+1 (603) 555-0123</a>
+              </div>
+              <div class="contact-info__item">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_217_1736)">
+                    <path
+                      d="M10 5L10 10L15 10"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6023 18.3337 9.99996C18.3337 5.39759 14.6027 1.66663 10.0003 1.66663C5.39795 1.66663 1.66699 5.39759 1.66699 9.99996C1.66699 14.6023 5.39795 18.3333 10.0003 18.3333Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_217_1736">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span class="action">Mon–Sat: 9:00–23:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <button class="scroll-up" type="button" aria-label="Scroll to top">
+      ↑
+    </button>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
