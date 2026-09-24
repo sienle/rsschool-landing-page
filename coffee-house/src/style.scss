@@ -702,25 +702,22 @@ section {
   justify-content: center;
   align-items: center;
   gap: 100px;
-  height: 450px;
+  padding: 100px;
+  min-height: 450px;
   margin-bottom: 40px;
   background-color: var(--color-bg-container);
   border-radius: 40px;
 
-  @media (max-width: 870px) {
+  @media (max-width: 1100px) {
     gap: 50px;
-    padding: 100px 60px;
-    height: auto;
+    padding-inline: 60px;
   }
 
   @media (max-width: 670px) {
     gap: 100px;
+    padding: 60px 16px;
     flex-wrap: wrap;
     justify-content: flex-start;
-  }
-
-  @media (max-width: 500px) {
-    padding: 60px 16px;
   }
 }
 
@@ -728,7 +725,7 @@ section {
   display: flex;
   flex-direction: column;
   width: 530px;
-  height: 250px;
+  min-height: 250px;
   gap: 24px;
 
   @media (max-width: 870px) {
