@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      document.documentElement.classList.add("js-loading");
+    </script>
     <link rel="icon" href="/favicon.png" type="image/png">
     <title>Coffee House</title>
   </head>
@@ -312,32 +315,25 @@
         </h2>
         <div class="gallery">
           <div class="gallery__column">
-            <div class="gallery__image-wrapper gallery__image-wrapper--large">
+            <div class="zoom-out-wrapper gallery-wrapper gallery-item">
               <img
-                class="gallery__image"
                 src="./src/assets/about/about-1.jpg"
                 alt="Woman drinking coffee"
               >
             </div>
-            <div class="gallery__image-wrapper gallery__image-wrapper--small">
-              <img
-                class="gallery__image"
-                src="./src/assets/about/about-2.jpg"
-                alt="Cup of coffee"
-              >
+            <div class="zoom-out-wrapper gallery-wrapper gallery-item--small">
+              <img src="./src/assets/about/about-2.jpg" alt="Cup of coffee">
             </div>
           </div>
           <div class="gallery__column">
-            <div class="gallery__image-wrapper gallery__image-wrapper--small">
+            <div class="zoom-out-wrapper gallery-wrapper gallery-item--small">
               <img
-                class="gallery__image"
                 src="./src/assets/about/about-3.jpg"
                 alt="Man drinking coffee"
               >
             </div>
-            <div class="gallery__image-wrapper gallery__image-wrapper--large">
+            <div class="zoom-out-wrapper gallery-wrapper gallery-item">
               <img
-                class="gallery__image"
                 src="./src/assets/about/about-4.jpg"
                 alt="Couple drinking coffee"
               >
@@ -356,7 +352,11 @@
             ordering your favorite coffee from wherever you are</span
           >
           <div class="app-links">
-            <a href="https://www.apple.com/app-store/" target="_blank" class="app-link">
+            <a
+              href="https://www.apple.com/app-store/"
+              target="_blank"
+              class="app-link"
+            >
               <div class="app-link-icon">
                 <svg
                   width="36"
@@ -380,7 +380,11 @@
                 <span class="store-name action">App Store</span>
               </div>
             </a>
-            <a href="https://play.google.com/store" target="_blank" class="app-link">
+            <a
+              href="https://play.google.com/store"
+              target="_blank"
+              class="app-link"
+            >
               <div class="app-link-icon">
                 <svg
                   width="36"
