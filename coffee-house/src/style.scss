@@ -27,6 +27,16 @@
   //outline: 1px solid red;
 }
 
+.js-loading {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
