@@ -1025,6 +1025,10 @@ section {
   border-color: var(--color-text-primary);
 }
 
+.menu-toggler__text {
+  user-select: none;
+}
+
 .menu-cards {
   display: flex;
   align-items: center;

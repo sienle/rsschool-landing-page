@@ -147,19 +147,22 @@
           <span class="heading--accent">amazing surprise</span>
         </h1>
         <div class="menu-toggler">
-          <div class="menu-toggler__item menu-toggler__item--active">
+          <div
+            class="menu-toggler__item menu-toggler__item--active"
+            data-category="coffee"
+          >
             <div class="menu-toggler__icon">
               <img src="../src/assets/menu-toggler/cup.png" alt="coffee">
             </div>
             <span class="menu-toggler__text action">Coffee</span>
           </div>
-          <div class="menu-toggler__item">
+          <div class="menu-toggler__item" data-category="tea">
             <div class="menu-toggler__icon">
               <img src="../src/assets/menu-toggler/tea.png" alt="tea">
             </div>
             <span class="menu-toggler__text action">Tea</span>
           </div>
-          <div class="menu-toggler__item">
+          <div class="menu-toggler__item" data-category="dessert">
             <div class="menu-toggler__icon">
               <img src="../src/assets/menu-toggler/dessert.png" alt="dessert">
             </div>
@@ -497,5 +500,6 @@
       ↑
     </button>
     <script type="module" src="../src/main.js"></script>
+    <script type="module" src="../src/shopCards.js"></script>
   </body>
 </html>
