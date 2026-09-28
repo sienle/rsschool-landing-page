@@ -1,6 +1,9 @@
-const modalController = ({ modal, btnOpen, btnClose }) => {
+import { getCardsData } from "./data.js";
+import { createBigCard } from "./cardMakers.js";
+
+const modalController = ({ modal, btnOpen, btnClose, cardsContainer }) => {
   const modalElem = document.querySelector(modal);
-  const cardsContainer = document.querySelector(".menu-cards");
+  const parrentContainer = document.querySelector(cardsContainer);
 
   modalElem.style.cssText = `
     display: flex;
@@ -20,21 +23,21 @@ const modalController = ({ modal, btnOpen, btnClose }) => {
     }
   };
 
-  const openModal = (event) => {
+  const openModal = async (event) => {
     const card = event.target.closest(btnOpen);
     if (!card) {
       return;
     }
+    const cardsData = await getCardsData();
+    const cardToInsert = createBigCard(cardsData, card.dataset.cardName);
+    modalElem.innerHTML = "";
+    modalElem.append(cardToInsert);
     modalElem.style.visibility = "visible";
     modalElem.style.opacity = 1;
-    const cloneElem = card.cloneNode(true);
-    cloneElem.classList.add("nohover");
-    modalElem.innerHTML = "";
-    modalElem.append(cloneElem);
     document.body.style.overflow = "hidden";
   };
 
-  cardsContainer.addEventListener("click", openModal);
+  parrentContainer.addEventListener("click", openModal);
   modalElem.addEventListener("click", closeModal);
 };
 

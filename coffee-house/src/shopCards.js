@@ -1,24 +1,9 @@
+import { getCardsData } from "./data.js";
+import { createCard } from "./cardMakers.js";
+
 const menuToggler = document.querySelector(".menu-toggler");
 let currentTab = document.querySelector(".menu-toggler__item--active").dataset
   .category;
-
-function createCard(obj) {
-  const card = document.createElement("div");
-  card.className = "card";
-  card.innerHTML = `
-    <div class="zoom-out-wrapper card-img-wrapper">
-      <img src="${obj.imgSrc}" alt="${obj.name}">
-    </div>
-    <div class="card-text-container">
-      <div class="card-text">
-        <span class="card-name heading-3">${obj.name}</span>
-        <span class="card-desc">${obj.description}</span>
-      </div>
-      <span class="card-price heading-3">${obj.price}</span>
-    </div>
-  `;
-  return card;
-}
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -28,10 +13,9 @@ function shuffle(array) {
 }
 
 async function renderTab(currentTab) {
-  const cardsData = await (await fetch("/json/cardsData.json")).json();
-  let arr = Array.from(cardsData);
-  let filtered = arr.filter(
-    (item) => item.category.toLowerCase() == currentTab,
+  const cardsData = await getCardsData();
+  let filtered = cardsData.filter(
+    (item) => item.category == currentTab,
   );
   shuffle(filtered);
   const cardsArr = [];

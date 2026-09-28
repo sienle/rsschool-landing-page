@@ -89,4 +89,5 @@ modalController({
   modal: ".modal",
   btnOpen: ".card",
   btnClose: ".card_close",
+  cardsContainer: ".menu-cards"
 });

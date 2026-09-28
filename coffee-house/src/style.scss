@@ -1100,3 +1100,11 @@ section {
   cursor: pointer;
   padding: 20px;
 }
+
+.big-card {
+  display: flex;
+  background-color: var(--color-bg-page);
+  border-radius: 40px;
+  padding: 16px;
+  gap: 20px;
+}
