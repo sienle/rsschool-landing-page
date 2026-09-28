@@ -54,5 +54,89 @@
     "description": "Fragrant black coffee with cognac and whipped cream",
     "price": "6.50",
     "imgSrc": "../menu/coffee/coffee-8.jpg"
+  },
+  {
+    "category": "tea",
+    "name": "Moroccan",
+    "description": "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
+    "price": "4.50",
+    "imgSrc": "../menu/tea/tea-1.png"
+  },
+  {
+    "category": "tea",
+    "name": "Ginger",
+    "description": "Original black tea with fresh ginger, lemon and honey",
+    "price": "5.00",
+    "imgSrc": "../menu/tea/tea-2.png"
+  },
+  {
+    "category": "tea",
+    "name": "Cranberry",
+    "description": "Invigorating black tea with cranberry and honey",
+    "price": "5.00",
+    "imgSrc": "../menu/tea/tea-3.png"
+  },
+  {
+    "category": "tea",
+    "name": "Sea buckthorn",
+    "description": "Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon",
+    "price": "5.50",
+    "imgSrc": "../menu/tea/tea-4.png"
+  },
+  {
+    "category": "dessert",
+    "name": "Marble cheesecake",
+    "description": "Philadelphia cheese with lemon zest on a light sponge cake and red currant jam",
+    "price": "3.50",
+    "imgSrc": "../menu/dessert/dessert-1.png"
+  },
+  {
+    "category": "dessert",
+    "name": "Red velvet",
+    "description": "Layer cake with cream cheese frosting",
+    "price": "4.00",
+    "imgSrc": "../menu/dessert/dessert-2.png"
+  },
+  {
+    "category": "dessert",
+    "name": "Cheesecakes",
+    "description": "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
+    "price": "4.50",
+    "imgSrc": "../menu/dessert/dessert-3.png"
+  },
+  {
+    "category": "dessert",
+    "name": "Creme brulee",
+    "description": "Delicate creamy dessert in a caramel basket with wild berries",
+    "price": "4.00",
+    "imgSrc": "../menu/dessert/dessert-4.png"
+  },
+  {
+    "category": "dessert",
+    "name": "Sweet Pancakes",
+    "description": "A fluffy stack of golden-brown pancakes drizzled with syrup and topped with fresh berries",
+    "price": "5.50",
+    "imgSrc": "../menu/dessert/dessert-5.png"
+  },
+  {
+    "category": "dessert",
+    "name": "Honey Cake",
+    "description": "Traditional honey layer cake with delicate cream filling",
+    "price": "7.50",
+    "imgSrc": "../menu/dessert/dessert-6.png"
+  },
+  {
+    "category": "dessert",
+    "name": "Chocolate Brownie",
+    "description": " rich, fudgy chocolate brownie topped with a scoop of ice cream and fresh strawberries",
+    "price": "6.00",
+    "imgSrc": "../menu/dessert/dessert-7.png"
+  },
+  {
+    "category": "dessert",
+    "name": "Classic Tiramisu",
+    "description": "Traditional Italian coffee-flavored dessert with creamy mascarpone layers",
+    "price": "6.50",
+    "imgSrc": "../menu/dessert/dessert-8.png"
   }
 ]
