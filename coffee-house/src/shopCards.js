@@ -1,5 +1,4 @@
 const menuToggler = document.querySelector(".menu-toggler");
-const allTabs = document.querySelectorAll(".menu-toggler__item");
 let currentTab = document.querySelector(".menu-toggler__item--active").dataset
   .category;
 

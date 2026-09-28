@@ -6,7 +6,7 @@
   --color-text-accent: #b0907a;
   --color-bg-page: #e1d4c9;
   --color-bg-container: #665f55;
-  --color-bg-overlay: #403f3dcc;
+  --color-bg-overlay: rgba(64, 63, 61, 0.8);
   --color-border-primary: #c1b6ad;
   --color-border-inverse: #665f55;
 }
@@ -15,7 +15,7 @@
   --color-text-primary: #e1d4c9;
   --color-bg-page: #292826;
   --color-bg-container: #403f3d;
-  --color-bg-overlay: #292826;
+  --color-bg-overlay: rgba(41, 40, 38, 0.8);
   --color-border-primary: #665f55;
   --color-border-inverse: #c1b6ad;
 }
@@ -1088,4 +1088,15 @@ section {
   .menu-load-more {
     display: block;
   }
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  background-color: var(--color-bg-overlay);
+  cursor: pointer;
+  padding: 20px;
 }
