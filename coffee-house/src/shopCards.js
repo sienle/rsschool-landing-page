@@ -4,29 +4,19 @@ import { createCard } from "./cardMakers.js";
 const menuToggler = document.querySelector(".menu-toggler");
 const cardsContainer = document.querySelector(".menu-cards");
 const loadMoreButton = document.querySelector(".menu-load-more");
+
 let currentTab = document.querySelector(".menu-toggler__item--active").dataset
   .category;
+let previousWidth = window.innerWidth;
+let visibleCount = getCardsCount();
 
-const mediumScreen = window.matchMedia("(max-width: 1200px)");
-const smallScreen = window.matchMedia("(max-width: 1106px)");
-
-let visibleCount = getInitialCardsCount();
-
-function getInitialCardsCount() {
-  if (window.innerWidth > 1200) {
-    return Infinity;
+function getCardsCount(width = window.innerWidth) {
+  if (width > 1200) {
+    return 8;
   }
 
-  if (window.innerWidth > 1106) {
+  if (width > 1106) {
     return 6;
-  }
-
-  return 4;
-}
-
-function getLoadStep() {
-  if (window.innerWidth > 1106) {
-    return 2;
   }
 
   return 4;
@@ -54,19 +44,32 @@ menuToggler.addEventListener("click", (event) => {
   activeTab.classList.remove("menu-toggler__item--active");
   target.classList.add("menu-toggler__item--active");
   currentTab = target.dataset.category;
-  visibleCount = getInitialCardsCount();
+  visibleCount = getCardsCount();
   renderTab(currentTab);
 });
 
 loadMoreButton.addEventListener("click", () => {
-  visibleCount += getLoadStep();
+  visibleCount += getCardsCount();
   renderTab(currentTab);
 });
 
-function handleBreakpointChange() {
-  visibleCount = getInitialCardsCount();
-  renderTab(currentTab);
+function handleResize() {
+  const currentWidth = window.innerWidth;
+
+  const previousCount = getCardsCount(previousWidth);
+  const currentCount = getCardsCount(currentWidth);
+
+  if (currentCount !== previousCount) {
+    if (currentWidth < previousWidth) {
+      visibleCount = currentCount;
+    } else if (visibleCount < currentCount) {
+      visibleCount = currentCount;
+    }
+
+    renderTab(currentTab);
+  }
+
+  previousWidth = currentWidth;
 }
 
-mediumScreen.addEventListener("change", handleBreakpointChange);
-smallScreen.addEventListener("change", handleBreakpointChange);
+window.addEventListener("resize", handleResize);
