@@ -1063,12 +1063,21 @@ section {
 
 .menu-load-more {
   display: none;
+  border-radius: 100%;
   padding: 0;
   background: transparent;
   cursor: pointer;
   outline: none;
   border: none;
   color: var(--color-text-primary);
+  background-color: (--color-bg-page);
+  transition: all 0.5 ease;
+}
+
+.menu-load-more:hover,
+.menu-load-more:active {
+  background-color: var(--color-border-inverse);
+  color: var(--color-bg-page);
 }
 
 @media (max-width: 1200px) {
