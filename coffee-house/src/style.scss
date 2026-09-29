@@ -1070,7 +1070,6 @@ section {
   outline: none;
   border: none;
   color: var(--color-text-primary);
-  background-color: (--color-bg-page);
   transition: all 0.5 ease;
 }
 
@@ -1078,26 +1077,6 @@ section {
 .menu-load-more:active {
   background-color: var(--color-border-inverse);
   color: var(--color-bg-page);
-}
-
-@media (max-width: 1200px) {
-  .card:nth-child(n + 7) {
-    display: none;
-  }
-
-  .menu-load-more {
-    display: block;
-  }
-}
-
-@media (max-width: 1106px) {
-  .card:nth-child(n + 5) {
-    display: none;
-  }
-
-  .menu-load-more {
-    display: block;
-  }
 }
 
 .modal {
