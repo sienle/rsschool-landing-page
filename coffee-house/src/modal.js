@@ -13,14 +13,11 @@ const modalController = ({ modal, btnOpen, btnClose, cardsContainer }) => {
   `;
 
   const closeModal = (event) => {
-    const target = event.target;
-    if (target === modalElem || target.closest?.(btnClose)) {
-      modalElem.style.opacity = 0;
-      setTimeout(() => {
-        modalElem.style.visibility = "hidden";
-      }, 300);
-      document.body.style.overflow = null;
-    }
+    modalElem.style.opacity = 0;
+    setTimeout(() => {
+      modalElem.style.visibility = "hidden";
+    }, 300);
+    document.body.style.overflow = null;
   };
 
   const openModal = async (event) => {
@@ -38,7 +35,19 @@ const modalController = ({ modal, btnOpen, btnClose, cardsContainer }) => {
   };
 
   parrentContainer.addEventListener("click", openModal);
-  modalElem.addEventListener("click", closeModal);
+
+  modalElem.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target === modalElem || target.closest?.(btnClose)) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
 };
 
 export default modalController;
