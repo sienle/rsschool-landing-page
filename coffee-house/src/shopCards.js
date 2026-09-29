@@ -1,5 +1,6 @@
 import { getCardsData } from "./data.js";
 import { createCard } from "./cardMakers.js";
+import modalController from "./modal.js";
 
 const menuToggler = document.querySelector(".menu-toggler");
 const cardsContainer = document.querySelector(".menu-cards");
@@ -9,6 +10,13 @@ let currentTab = document.querySelector(".menu-toggler__item--active").dataset
   .category;
 let previousWidth = window.innerWidth;
 let visibleCount = getCardsCount();
+
+modalController({
+  modal: ".modal",
+  btnOpen: ".card",
+  btnClose: ".card_close",
+  cardsContainer: ".menu-cards"
+});
 
 function getCardsCount(width = window.innerWidth) {
   if (width > 1200) {

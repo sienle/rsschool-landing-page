@@ -1,4 +1,3 @@
-import modalController from "./modal.js";
 import { initSlider } from "./slider.js";
 
 import "./style.scss";
@@ -86,11 +85,4 @@ window.addEventListener("resize", () => {
   if (screenWid > 920) {
     closeBurgerMenu();
   }
-});
-
-modalController({
-  modal: ".modal",
-  btnOpen: ".card",
-  btnClose: ".card_close",
-  cardsContainer: ".menu-cards"
 });
