@@ -124,7 +124,7 @@ export function createBigCard(cardsData, cardNameData) {
   note.append(noteIcon, noteText)
 
   const closeButton = createElem(
-    "big-card-close-button action",
+    "big-card-close-button action card_close",
     "div",
     "Close",
   );
