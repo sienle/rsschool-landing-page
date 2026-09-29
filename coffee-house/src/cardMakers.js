@@ -37,37 +37,83 @@ export function createBigCard(cardsData, cardNameData) {
   let additives = {};
   if (obj.category === "dessert") {
     sizes = {
-      small: "50 g",
-      medium: "100 g",
-      large: "200 g",
+      small: {
+        text: "50 g",
+        addtoPrice: 0
+      },
+      medium: {
+        text: "100 g",
+        addtoPrice: 3
+      },
+      large: {
+        text: "200 g",
+        addtoPrice: 6
+      },
     };
   } else {
     sizes = {
-      small: "200 ml",
-      medium: "300 ml",
-      large: "400 ml",
+      small: {
+        text: "200 ml",
+        addtoPrice: 0
+      },
+      medium: {
+        text: "300 ml",
+        addtoPrice: 2
+      },
+      large: {
+        text: "400 ml",
+        addtoPrice: 4
+      },
     };
   }
   if (obj.category === "coffee") {
     additives = {
-      first: "Sugar",
-      second: "Cinnamon",
-      third: "Syrup",
+      first: {
+        text: "Sugar",
+        addtoPrice: 0.2
+      },
+      second: {
+        text: "Cinnamon",
+        addtoPrice: 1.5
+      },
+      third: {
+        text: "Syrup",
+        addtoPrice: 1
+      },
     };
   } else if (obj.category === "tea") {
     additives = {
-      first: "Sugar",
-      second: "Lemon",
-      third: "Syrup",
+      first: {
+        text: "Sugar",
+        addtoPrice: 0.2
+      },
+      second: {
+        text: "Lemon",
+        addtoPrice: 1.1
+      },
+      third: {
+        text: "Syrup",
+        addtoPrice: 1
+      },
     };
   } else {
     additives = {
-      first: "Berries",
-      second: "Nuts",
-      third: "Jam",
+      first: {
+        text: "Berries",
+        addtoPrice: 3
+      },
+      second: {
+        text: "Nuts",
+        addtoPrice: 3.5
+      },
+      third: {
+        text: "Jam",
+        addtoPrice: 2.5
+      },
     };
   }
   const card = createElem("big-card");
+  card.dataset.basePrice = obj.price;
 
   const imgWrapper = createElem("zoom-out-wrapper card-img-wrapper big-card-img");
 
@@ -105,9 +151,9 @@ export function createBigCard(cardsData, cardNameData) {
   cardAdditives.append(additivesTitle, additiveVariants);
 
   const total = createElem("total-container");
-  const totalText = createElem("big-card-price heading-3", "span", "Total:");
+  const totalText = createElem("width-fit heading-3", "span", "Total:");
   const cardPrice = createElem(
-    "big-card-price heading-3",
+    "width-fit heading-3 big-card-price-value",
     "span",
     `$${obj.price}`,
   );

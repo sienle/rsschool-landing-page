@@ -1,5 +1,20 @@
 import { getCardsData } from "./data.js";
 import { createBigCard } from "./cardMakers.js";
+import updateTotal from './updateTotal.js';
+
+function selectSize(size) {
+  const variants = size.parentElement.querySelectorAll(".variant");
+
+  variants.forEach((variant) => {
+    variant.classList.remove("variant-active");
+  });
+
+  size.classList.add("variant-active");
+}
+
+function toggleAdditive(additive) {
+  additive.classList.toggle("variant-active");
+}
 
 const modalController = ({ modal, btnOpen, btnClose, cardsContainer }) => {
   const modalElem = document.querySelector(modal);
@@ -40,6 +55,21 @@ const modalController = ({ modal, btnOpen, btnClose, cardsContainer }) => {
     const target = event.target;
     if (target === modalElem || target.closest?.(btnClose)) {
       closeModal();
+    }
+
+    const size = event.target.closest(".size-variants .variant");
+
+    if (size) {
+      selectSize(size);
+      updateTotal(size.closest(".big-card"));
+      return;
+    }
+
+    const additive = event.target.closest(".additive-variants .variant");
+
+    if (additive) {
+      toggleAdditive(additive);
+      updateTotal(additive.closest(".big-card"));
     }
   });
 
