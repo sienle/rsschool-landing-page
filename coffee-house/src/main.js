@@ -1,10 +1,13 @@
 import modalController from "./modal.js";
+import { initSlider } from "./slider.js";
 
 import "./style.scss";
 
 window.addEventListener("load", () => {
   document.documentElement.classList.remove("js-loading");
 });
+
+initSlider();
 
 const themeSwitch = document.querySelector("#theme-switch");
 
