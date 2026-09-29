@@ -1131,7 +1131,7 @@ section {
 .additive-variants {
   display: flex;
   gap: 8px;
-  height: 46px;
+  flex-wrap: wrap;
 }
 
 .variant {
@@ -1254,4 +1254,13 @@ section {
 
 .big-card-img {
   flex-shrink: 0;
+
+  @media (max-width: 550px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 440px) {
+    display: none;
+  }
 }
