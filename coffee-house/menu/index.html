@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      document.documentElement.classList.add("js-loading");
+    </script>
     <link rel="icon" href="../favicon.png" type="image/png">
     <title>Coffee House</title>
   </head>
@@ -116,15 +119,15 @@
       <nav class="burger__nav">
         <ul>
           <li class="burger__nav-item">
-            <a href="#favorite-coffee" class="burger__item burger-link"
+            <a href="../#favorite-coffee" class="burger__item burger-link"
               >Favorite coffee</a
             >
           </li>
           <li class="burger__nav-item">
-            <a href="#about" class="burger__item burger-link">About</a>
+            <a href="../#about" class="burger__item burger-link">About</a>
           </li>
           <li class="burger__nav-item">
-            <a href="#mobile-app" class="burger__item burger-link"
+            <a href="../#mobile-app" class="burger__item burger-link"
               >Mobile App</a
             >
           </li>
@@ -144,140 +147,30 @@
           <span class="heading--accent">amazing surprise</span>
         </h1>
         <div class="menu-toggler">
-          <div class="menu-toggler__item menu-toggler__item--active">
+          <div
+            class="menu-toggler__item menu-toggler__item--active"
+            data-category="coffee"
+          >
             <div class="menu-toggler__icon">
               <img src="../src/assets/menu-toggler/cup.png" alt="coffee">
             </div>
             <span class="menu-toggler__text action">Coffee</span>
           </div>
-          <div class="menu-toggler__item">
+          <div class="menu-toggler__item" data-category="tea">
             <div class="menu-toggler__icon">
               <img src="../src/assets/menu-toggler/tea.png" alt="tea">
             </div>
             <span class="menu-toggler__text action">Tea</span>
           </div>
-          <div class="menu-toggler__item">
+          <div class="menu-toggler__item" data-category="dessert">
             <div class="menu-toggler__icon">
               <img src="../src/assets/menu-toggler/dessert.png" alt="dessert">
             </div>
             <span class="menu-toggler__text action">Dessert</span>
           </div>
         </div>
-        <div class="menu-cards">
-          <div class="card">
-            <img
-              src="../src/assets/coffee-1.jpg"
-              alt="Irish coffee"
-              class="card-img"
-            >
-            <div class="card-text-container">
-              <div class="card-text">
-                <span class="card-name heading-3">Irish coffee</span>
-                <span class="card-desc"
-                  >Fragrant black coffee with Jameson Irish whiskey and whipped
-                  milk</span
-                >
-              </div>
-              <span class="card-price heading-3">$7.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../src/assets/coffee-2.jpg"
-              alt="Kahlua coffee"
-              class="card-img"
-            >
-            <div class="card-text-container">
-              <span class="card-name heading-3">Kahlua coffee</span>
-              <span class="card-desc"
-                >Classic coffee with milk and Kahlua liqueur under a cap of
-                frothed milk</span
-              >
-              <span class="card-price heading-3">$7.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../src/assets/coffee-3.jpg"
-              alt="Honey raf"
-              class="card-img"
-            >
-            <div class="card-text-container">
-              <span class="card-name heading-3">Honey raf</span>
-              <span class="card-desc"
-                >Espresso with frothed milk, cream and aromatic honey</span
-              >
-              <span class="card-price heading-3">$5.50</span>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../src/assets/coffee-4.jpg"
-              alt="Ice cappuccino"
-              class="card-img"
-            >
-            <div class="card-text-container">
-              <span class="card-name heading-3">Ice cappuccino</span>
-              <span class="card-desc"
-                >Cappuccino with soft thick foam in summer version with
-                ice</span
-              >
-              <span class="card-price heading-3">$5.00</span>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../src/assets/coffee-5.jpg"
-              alt="Espresso"
-              class="card-img"
-            >
-            <div class="card-text-container">
-              <span class="card-name heading-3">Espresso</span>
-              <span class="card-desc">Classic black coffee</span>
-              <span class="card-price heading-3">$4.50</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../src/assets/coffee-6.jpg" alt="Latte" class="card-img">
-            <div class="card-text-container">
-              <span class="card-name heading-3">Latte</span>
-              <span class="card-desc"
-                >Espresso coffee with the addition of steamed milk and dense
-                milk foam</span
-              >
-              <span class="card-price heading-3">$5.50</span>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../src/assets/coffee-7.jpg"
-              alt="Latte macchiato"
-              class="card-img"
-            >
-            <div class="card-text-container">
-              <span class="card-name heading-3">Latte macchiato</span>
-              <span class="card-desc"
-                >Espresso with frothed milk and chocolate</span
-              >
-              <span class="card-price heading-3">$5.50</span>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../src/assets/coffee-8.jpg"
-              alt="Coffee with cognac"
-              class="card-img"
-            >
-            <div class="card-text-container">
-              <span class="card-name heading-3">Coffee with cognac</span>
-              <span class="card-desc"
-                >Fragrant black coffee with cognac and whipped cream</span
-              >
-              <span class="card-price heading-3">$6.50</span>
-            </div>
-          </div>
-        </div>
-        <button class="menu-load-more" type="button">
+        <div class="menu-cards"></div>
+        <div class="menu-load-more">
           <svg
             width="60"
             height="60"
@@ -306,7 +199,7 @@
               stroke-linejoin="round"
             />
           </svg>
-        </button>
+        </div>
       </section>
     </main>
     <footer id="footer">
@@ -505,6 +398,8 @@
     <button class="scroll-up" type="button" aria-label="Scroll to top">
       ↑
     </button>
+    <div class="modal"></div>
     <script type="module" src="../src/main.js"></script>
+    <script type="module" src="../src/shopCards.js"></script>
   </body>
 </html>

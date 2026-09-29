@@ -1,4 +1,12 @@
+import { initSlider } from "./slider.js";
+
 import "./style.scss";
+
+window.addEventListener("load", () => {
+  document.documentElement.classList.remove("js-loading");
+});
+
+initSlider();
 
 const themeSwitch = document.querySelector("#theme-switch");
 
@@ -33,41 +41,48 @@ if (scrollUp) {
   });
 }
 
-
 //Burger
-const burgerButton = document.querySelector('.burger');
-const burgerMenu = document.querySelector('.burger__nav');
-const overflowWrapper = document.querySelector('.overflow__wraper');
-const menuLinks = document.querySelectorAll('.burger__nav-item');
+const burgerButton = document.querySelector(".burger");
+const burgerMenu = document.querySelector(".burger__nav");
+const overflowWrapper = document.querySelector(".overflow__wraper");
+const menuLinks = document.querySelectorAll(".burger__nav-item");
 
-burgerButton.addEventListener('click', ()=> {
-  burgerButton.classList.toggle('burger__active');
-  burgerMenu.classList.toggle('burger__nav_active');
-  overflowWrapper.classList.toggle('overflow__wraper_active');
-  if (burgerButton.classList.contains('burger__active')) {
-    document.body.style.overflow = 'hidden';
+const closeBurgerMenu = () => {
+  burgerButton.classList.remove("burger__active");
+  burgerMenu.classList.remove("burger__nav_active");
+  overflowWrapper.classList.remove("overflow__wraper_active");
+  document.body.style.overflow = null;
+};
+
+const openBurgerMenu = () => {
+  burgerButton.classList.add("burger__active");
+  burgerMenu.classList.add("burger__nav_active");
+  overflowWrapper.classList.add("overflow__wraper_active");
+  document.body.style.overflow = "hidden";
+};
+
+burgerButton.addEventListener("click", () => {
+  if (burgerButton.classList.contains("burger__active")) {
+    closeBurgerMenu();
   } else {
-    document.body.style.overflow = null;
+    openBurgerMenu();
   }
 });
 
-menuLinks.forEach(item => {
-  item.addEventListener('click', ()=> {
-    if (document.body.style.overflow == 'hidden') {
-      burgerButton.classList.toggle('burger__active');
-      burgerMenu.classList.toggle('burger__nav_active');
-      overflowWrapper.classList.toggle('overflow__wraper_active');
-      document.body.style.overflow = null;
-    }
-  });
+menuLinks.forEach((item) => {
+  item.addEventListener("click", closeBurgerMenu);
 });
 
-window.addEventListener('resize', () => {
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && burgerButton.classList.contains("burger__active")) {
+    closeBurgerMenu();
+    burgerButton.blur();
+  }
+});
+
+window.addEventListener("resize", () => {
   let screenWid = window.innerWidth;
   if (screenWid > 920) {
-    burgerButton.classList.remove('burger__active');
-    burgerMenu.classList.remove('burger__nav_active');
-    overflowWrapper.classList.remove('overflow__wraper_active');
-    document.body.style.overflow = null;
+    closeBurgerMenu();
   }
-})
+});
